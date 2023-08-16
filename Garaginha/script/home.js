@@ -1,29 +1,14 @@
-//carrega o mapa
-let lat = -23.557876134993617
-let lng = -46.440005170713576
-
 let latitudeDoUsuario;
+let longitudeDoUsuario;
+
 function obterLatitudeDoUsuario() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             latitudeDoUsuario = position.coords.latitude;
-            console.log('Latitude do usuário:', latitudeDoUsuario);
-            // Agora você pode acessar a variável "latitudeDoUsuario" em qualquer lugar do seu código.
-        }, function(error) {
-            console.log('Erro ao obter a geolocalização:', error);
-        });
-    } else {
-        console.log('Geolocalização não suportada pelo navegador.');
-    }
-}
-obterLatitudeDoUsuario();
-let longitudeDoUsuario;
-function obterLongitudeDoUsuario() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
             longitudeDoUsuario = position.coords.longitude;
+            console.log('Latitude do usuário:', latitudeDoUsuario);
             console.log('Longitude do usuário:', longitudeDoUsuario);
-            // Agora você pode acessar a variável "latitudeDoUsuario" em qualquer lugar do seu código.
+            criarMapa();
         }, function(error) {
             console.log('Erro ao obter a geolocalização:', error);
         });
@@ -31,13 +16,16 @@ function obterLongitudeDoUsuario() {
         console.log('Geolocalização não suportada pelo navegador.');
     }
 }
-obterLongitudeDoUsuario();
 
-let map = L.map('map').setView([-23.573302,-46.6896913],18)
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-}).addTo(map);
+function criarMapa() {
+    var map = L.map('map').setView([latitudeDoUsuario, longitudeDoUsuario], 18);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+}
+
+obterLatitudeDoUsuario();
 
 
 

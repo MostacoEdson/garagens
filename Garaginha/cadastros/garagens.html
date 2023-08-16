@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/garagemStyle.css">
 </head>
 <body>
     <header></header>
     <main>
         <div class="container--form">
-            <input type="text" name="nome" placeholder="Nome">
-            <input type="text" name="sobrenome" placeholder="Sobrenome">
-            <input type="text" name="CEP" placeholder="CEP">
-            <input type="text" name="rua" placeholder="Rua">
-            <input type="text" name="numero" placeholder="Número">
-            <input type="text" name="complemento" placeholder="Complemento">
-            <input type="text" name="bairro" placeholder="Bairro">
-            <input type="text" name="cidade" placeholder="Cidade">
-            <input type="text" name="estado" placeholder="Estado">
-            <button>Cadastrar</button>
+            <input type="text" name="nome" placeholder="Nome" id="nome" required>
+            <input type="text" name="sobrenome" placeholder="Sobrenome" id="sobrenome" required>
+            <input type="text" name="CEP" placeholder="CEP" id="cep"required>
+            <input type="text" name="rua" placeholder="Rua" id="rua" disabled>
+            <input type="text" name="numero" placeholder="Número" id="numero"required>
+            <input type="text" name="complemento" placeholder="Complemento" id="complemento">
+            <input type="text" name="bairro" placeholder="Bairro" id="bairro" disabled>
+            <input type="text" name="cidade" placeholder="Cidade" id="cidade" disabled>
+            <input type="text" name="estado" placeholder="Estado" id="estado" disabled>
+            <button onclick="cadastrarGaragem()">Cadastrar</button>
         </div>
     </main>
     <footer></footer>
-    <script src="../script/home.js"></script>
     <script src="../script/dados.js"></script>
     <script src="../script/cadastros.js"></script>
 </body>

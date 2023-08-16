@@ -32,3 +32,15 @@ let garagens = [
         }
     }
 ]
+let usuarios = [
+    {
+        id: 1,
+        email: 'emostaco@hotmail.com',
+        senha: 'abacaxi123'
+    },
+    {
+        id: 2,
+        email: 'zeduedu@hotmail.com',
+        senha: 'Morango10'
+    }
+];
